@@ -1,20 +1,19 @@
 package com.vsynytsyn.distinfsystems.demo.service;
 
 import io.grpc.stub.StreamObserver;
-import org.vsynytsyn.distinfsystems.grpc.HelloRequest;
-import org.vsynytsyn.distinfsystems.grpc.HelloResponse;
-import org.vsynytsyn.distinfsystems.grpc.HelloServiceGrpc.HelloServiceImplBase;
+import org.vsynytsyn.distinfsystems.grpc.HelloThereRequest;
+import org.vsynytsyn.distinfsystems.grpc.HelloThereResponse;
+import org.vsynytsyn.distinfsystems.grpc.HelloThereServiceGrpc.HelloThereServiceImplBase;
 
-public class HelloServiceImpl extends HelloServiceImplBase {
+public class HelloServiceImpl extends HelloThereServiceImplBase {
 
     @Override
-    public void hello(
-            HelloRequest request, StreamObserver<HelloResponse> responseObserver) {
+    public void helloThere(HelloThereRequest request, StreamObserver<HelloThereResponse> responseObserver) {
+        System.out.printf("Received request:\n'%s'\n", request.toString());
+        String greeting = "Hello, " + request.getName() + " " + request.getSurname();
 
-        String greeting = "Hello, " + request.getFirstName() + " " + request.getLastName();
-
-        HelloResponse response = HelloResponse.newBuilder()
-                .setGreeting(greeting)
+        HelloThereResponse response = HelloThereResponse.newBuilder()
+                .setMessage(greeting)
                 .build();
 
         responseObserver.onNext(response);
