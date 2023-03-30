@@ -15,7 +15,7 @@ class HelloThereServiceStub(object):
             channel: A grpc.Channel.
         """
         self.hello_there = channel.unary_unary(
-                '/practice4.HelloThereService/hello_there',
+                '/org.vsynytsyn.distinfsystems.grpc.HelloThereService/hello_there',
                 request_serializer=Practice4__pb2.HelloThereRequest.SerializeToString,
                 response_deserializer=Practice4__pb2.HelloThereResponse.FromString,
                 )
@@ -40,7 +40,7 @@ def add_HelloThereServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'practice4.HelloThereService', rpc_method_handlers)
+            'org.vsynytsyn.distinfsystems.grpc.HelloThereService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -59,7 +59,7 @@ class HelloThereService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/practice4.HelloThereService/hello_there',
+        return grpc.experimental.unary_unary(request, target, '/org.vsynytsyn.distinfsystems.grpc.HelloThereService/hello_there',
             Practice4__pb2.HelloThereRequest.SerializeToString,
             Practice4__pb2.HelloThereResponse.FromString,
             options, channel_credentials,

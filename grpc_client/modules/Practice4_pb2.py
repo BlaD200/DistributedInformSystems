@@ -13,17 +13,17 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fPractice4.proto\x12\tpractice4\"2\n\x11HelloThereRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07surname\x18\x02 \x01(\t\"%\n\x12HelloThereResponse\x12\x0f\n\x07message\x18\x01 \x01(\t2_\n\x11HelloThereService\x12J\n\x0bhello_there\x12\x1c.practice4.HelloThereRequest\x1a\x1d.practice4.HelloThereResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fPractice4.proto\x12!org.vsynytsyn.distinfsystems.grpc\"2\n\x11HelloThereRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07surname\x18\x02 \x01(\t\"%\n\x12HelloThereResponse\x12\x0f\n\x07message\x18\x01 \x01(\t2\x8f\x01\n\x11HelloThereService\x12z\n\x0bhello_there\x12\x34.org.vsynytsyn.distinfsystems.grpc.HelloThereRequest\x1a\x35.org.vsynytsyn.distinfsystems.grpc.HelloThereResponseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'Practice4_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _HELLOTHEREREQUEST._serialized_start=30
-  _HELLOTHEREREQUEST._serialized_end=80
-  _HELLOTHERERESPONSE._serialized_start=82
-  _HELLOTHERERESPONSE._serialized_end=119
-  _HELLOTHERESERVICE._serialized_start=121
-  _HELLOTHERESERVICE._serialized_end=216
+  _HELLOTHEREREQUEST._serialized_start=54
+  _HELLOTHEREREQUEST._serialized_end=104
+  _HELLOTHERERESPONSE._serialized_start=106
+  _HELLOTHERERESPONSE._serialized_end=143
+  _HELLOTHERESERVICE._serialized_start=146
+  _HELLOTHERESERVICE._serialized_end=289
 # @@protoc_insertion_point(module_scope)

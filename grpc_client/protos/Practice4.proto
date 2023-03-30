@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package practice4;
+package org.vsynytsyn.distinfsystems.grpc;
 
 message HelloThereRequest {
     string name = 1;
