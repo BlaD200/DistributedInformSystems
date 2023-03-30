@@ -1,0 +1,16 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package org.vsynytsyn.distinfsystems.grpc;
+
+message HelloThereRequest {
+    string name = 1;
+    string surname = 2;
+}
+
+message HelloThereResponse {
+    string message = 1;
+}
+
+service HelloThereService {
+    rpc hello_there(HelloThereRequest) returns (HelloThereResponse);
+}
