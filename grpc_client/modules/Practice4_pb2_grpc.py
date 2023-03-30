@@ -5,7 +5,7 @@ import grpc
 import Practice4_pb2 as Practice4__pb2
 
 
-class HelloServiceStub(object):
+class HelloThereServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -14,42 +14,42 @@ class HelloServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.hello = channel.unary_unary(
-                '/practice4.HelloService/hello',
-                request_serializer=Practice4__pb2.HelloRequest.SerializeToString,
-                response_deserializer=Practice4__pb2.HelloResponse.FromString,
+        self.hello_there = channel.unary_unary(
+                '/practice4.HelloThereService/hello_there',
+                request_serializer=Practice4__pb2.HelloThereRequest.SerializeToString,
+                response_deserializer=Practice4__pb2.HelloThereResponse.FromString,
                 )
 
 
-class HelloServiceServicer(object):
+class HelloThereServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def hello(self, request, context):
+    def hello_there(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_HelloServiceServicer_to_server(servicer, server):
+def add_HelloThereServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'hello': grpc.unary_unary_rpc_method_handler(
-                    servicer.hello,
-                    request_deserializer=Practice4__pb2.HelloRequest.FromString,
-                    response_serializer=Practice4__pb2.HelloResponse.SerializeToString,
+            'hello_there': grpc.unary_unary_rpc_method_handler(
+                    servicer.hello_there,
+                    request_deserializer=Practice4__pb2.HelloThereRequest.FromString,
+                    response_serializer=Practice4__pb2.HelloThereResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'practice4.HelloService', rpc_method_handlers)
+            'practice4.HelloThereService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class HelloService(object):
+class HelloThereService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def hello(request,
+    def hello_there(request,
             target,
             options=(),
             channel_credentials=None,
@@ -59,8 +59,8 @@ class HelloService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/practice4.HelloService/hello',
-            Practice4__pb2.HelloRequest.SerializeToString,
-            Practice4__pb2.HelloResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/practice4.HelloThereService/hello_there',
+            Practice4__pb2.HelloThereRequest.SerializeToString,
+            Practice4__pb2.HelloThereResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
