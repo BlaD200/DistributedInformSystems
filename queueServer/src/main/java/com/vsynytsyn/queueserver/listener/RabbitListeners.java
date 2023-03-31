@@ -57,12 +57,7 @@ public class RabbitListeners {
     }
 
 //    @RabbitListener(queues = "LogProcessedQueue")
-//    public void processedLogInfo(byte[] message) {
-//        try {
-//            RabbitMessageDto messageDTO = objectMapper.readValue(message, RabbitMessageDto.class);
-//            System.out.println("Processed: " + messageDTO);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+//    public void processedLogInfo(String processedHash) {
+//        System.out.println("Processed log hash: " + processedHash);
 //    }
 }

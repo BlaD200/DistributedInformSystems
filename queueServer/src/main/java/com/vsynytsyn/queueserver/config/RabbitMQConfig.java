@@ -46,7 +46,7 @@ public class RabbitMQConfig {
         return BindingBuilder
                 .bind(logProcessingQueueDebug())
                 .to(logProcessingExchange())
-                .with(ROUTING_KEYS.LogDebug)
+                .with(ROUTING_KEYS.LogDebug.routingKey)
                 .noargs();
     }
 
@@ -55,7 +55,7 @@ public class RabbitMQConfig {
         return BindingBuilder
                 .bind(logProcessingQueueInfo())
                 .to(logProcessingExchange())
-                .with(ROUTING_KEYS.LogInfo)
+                .with(ROUTING_KEYS.LogInfo.routingKey)
                 .noargs();
     }
     @Bean
@@ -63,7 +63,7 @@ public class RabbitMQConfig {
         return BindingBuilder
                 .bind(logProcessedQueue())
                 .to(logProcessedExchange())
-                .with(ROUTING_KEYS.LogProcessed)
+                .with(ROUTING_KEYS.LogProcessed.routingKey)
                 .noargs();
     }
 

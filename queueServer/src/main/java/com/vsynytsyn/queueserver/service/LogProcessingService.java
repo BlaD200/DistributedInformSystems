@@ -24,10 +24,11 @@ public class LogProcessingService {
                 RabbitMQConfig.ROUTING_KEYS.LogProcessed.routingKey,
                 originalHash
         );
+//        System.out.println("Log added to processed queue.");
     }
 
     public enum LogLevels {
         DEBUG,
-        INFO;
+        INFO
     }
 }
