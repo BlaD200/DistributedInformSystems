@@ -7,11 +7,11 @@ channel = connection.channel()
 
 exchange_name = "LogProcessedExchange"
 
-channel.exchange_declare(exchange=exchange_name, exchange_type='direct')
+channel.exchange_declare(exchange=exchange_name, exchange_type='direct', durable=True)
 
 queue_name = "LogProcessedQueue"
 
-result = channel.queue_declare(queue=queue_name, exclusive=True)
+result = channel.queue_declare(queue=queue_name, durable=True)
 
 
 channel.queue_bind(exchange=exchange_name, queue=queue_name, routing_key='processedLog')

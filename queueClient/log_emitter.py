@@ -15,7 +15,7 @@ message_body = '{"hashValue": "%s", "message": "%s", "timestamp": "%s"}' % (log_
 
 exchange_name = 'LogProcessingExchange'
 
-channel.exchange_declare(exchange='LogProcessingExchange', exchange_type='direct')
+channel.exchange_declare(exchange='LogProcessingExchange', exchange_type='direct', durable=True)
 
 routing_key = 'processLog' + log_type
 
