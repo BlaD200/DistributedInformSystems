@@ -6,7 +6,7 @@ connection = pika.BlockingConnection(
 channel = connection.channel()
 
 # Info or Debug
-log_type = input('Log type: ')
+log_type = input('Log type (Debug or Info): ')
 log_hash = input('Log hash: ')
 log_message = input('Log message: ')
 log_date = str(datetime.datetime.now())
