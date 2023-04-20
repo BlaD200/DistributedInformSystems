@@ -41,4 +41,6 @@ def send_message():
     connection.close()
 
 
-scheduler.start()
+if __name__ == '__main__':
+    scheduler.start()
+

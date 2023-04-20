@@ -1,6 +1,5 @@
 import pika
 
-
 exchange_name = "LogProcessedExchange"
 
 queue_name = "LogProcessedQueue"
@@ -29,4 +28,5 @@ def main():
     channel.start_consuming()
 
 
-main()
+if __name__ == '__main__':
+    main()
