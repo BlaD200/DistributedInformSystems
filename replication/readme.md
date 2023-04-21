@@ -11,8 +11,8 @@
    ```
    Server2:
    ```
+   docker exec -ti mysql2 sh -c "mysql -uroot -p"
    SET GLOBAL server_id = 2;
-   docker exec -ti mysql1 sh -c "mysql -uroot -p"
    source /backup/initdb.sql
    ```
 4. Using the filename and the position
